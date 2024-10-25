@@ -2,6 +2,7 @@
 - name: Install Docker on Debian 12 and ensure it is running
   hosts: all
   become: true  # Use sudo to execute tasks as root
+  become_user: services  # Force tasks to run as root
   tasks:
     - name: Update apt package index
       ansible.builtin.apt:
