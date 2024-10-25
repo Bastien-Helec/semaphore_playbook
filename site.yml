@@ -1,7 +1,8 @@
 ---
-- hosts: all
-  become: true
+- name: Test connectivity to hosts
+  hosts: all
+  gather_facts: false
   tasks:
-    - name : Print OS info
-      ansible.builtin.package:
-        name: apache2
+    - name: Ping all hosts
+      ping:
+
